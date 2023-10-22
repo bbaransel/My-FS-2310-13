@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
         label {
             color: red;
         }
-        div{
+
+        div {
             margin-bottom: 10px;
         }
     </style>
@@ -17,7 +19,8 @@
 
 <body>
     <form>
-        <div><label>Ad Soyad:</label>
+        <div>
+            <label>Ad Soyad:</label>
             <input type="text">
         </div>
         <div><label>Email</label>
@@ -27,8 +30,70 @@
             <label> Profil Fotoğrafı</label>
             <input type="file" name="" id="">
         </div>
-
+        <div>
+            <label>Şifre:
+                <input type="password" name="" id="">
+            </label>
+        </div>
+        <div>
+            <h3>Hobiler</h3>
+            <div>
+                <input type="checkbox" name="" id="tiyatro">
+                <label for="tiyatro">Tiyatro</label>
+            </div>
+            <div>
+                <input type="checkbox" name="" id="sinema">
+                <label for="sinema">Sinema</label>
+            </div>
+            <!-- checkbox id sini for"" içine yazınca beraber çalışır -->
+        </div>
+        <div>
+            <h3>Cinsiyet</h3>
+            <div>
+                <input type="radio" name="cinsiyet" id="kadin">
+                <label for="kadin">Kadın</label>
+            </div>
+            <div>
+                <input type="radio" name="cinsiyet" id="erkek">
+                <label for="erkek">Erkek</label>
+            </div>
+            <!-- Radio da aynı gruba almadıkça birden çok seçim yapılabilir, tek bir tanesini seçtirmek için "name" kısmı aynı olmalı ki aynı grupta olsun. -->
+        </div>
+        <div>
+            <h3>Medeni Durumu</h3>
+            <div>
+                <input type="radio" name="medeni" id="evli">
+                <label for="evli">Evli</label>
+            </div>
+            <div>
+                <input type="radio" name="medeni" id="bekar">
+                <label for="bekar">Bekar</label>
+            </div>
+            <div>
+                <input type="radio" name="medeni" id="sanane">
+                <label for="sanane">Sanane</label>
+            </div>
+        </div>
+        <div>
+            <h3>Şehir</h3>
+            <select name="sehir" id="sehirr">
+                <option value="">Lütfen bir şehir seçiniz...</option>
+                <option value="34">İstanbul</option>
+                <option value="06">Ankara</option>
+                <option value="35">İzmir</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Doğum Tarihi</label>
+            <input type="date" name="" id="">
+        </div>
+        <div>
+            <input type="submit" value="Kaydet">
+            <input type="submit" value="Kaydet">
+            <input type="reset" value="Temizle">
+        </div>
     </form>
+
     <!-- Auto Format document ayarlarını yap !!! -->
 
 

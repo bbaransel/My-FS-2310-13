@@ -1,0 +1,25 @@
+.kutu {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* margin: 0;
+    margin-top: 10px;
+    margin-right: 20;
+    margin-bottom: 30px;
+    margin-left: 40px; 
+    aşağıda kolay yolu var*/
+
+    /* margin: 10px 20px 30px 40px;
+    sırası Top'tan başlayıp saat yönünde top-r-b-l */
+
+    /* margin: 20px 30px;
+    Burada da ilki top-bottom/ ikincisi right-left */
+    margin: 10px 40px 60px;
+    /* 3 tane olunca ilk 2 top ve bottom 3.sü ortak right-left */
+
+    display: inline-block;
+}
+
+body {
+    margin: 0;
+}

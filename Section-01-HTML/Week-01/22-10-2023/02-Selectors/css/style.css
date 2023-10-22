@@ -1,0 +1,25 @@
+/* Element Selectors */
+h1 {
+    color: red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main_header {
+    color: blue;
+}
+
+p {
+    font-size: 20px;
+}
+
+.main_header {
+    color: purple;
+}
+
+#paraghraph1 {
+    color: orange;
+}
+/* CSS'te temel 3 selector vardır:
+1- Element selector/html adlarını seçer, html adları ile kullanılır
+2- Class selector/ html classlarını seçer, classların başına '.' konularak kullanılır.
+3- ID Selector. Html idlerini seçer ID adının başına # işareti konularak kullanılır. */
