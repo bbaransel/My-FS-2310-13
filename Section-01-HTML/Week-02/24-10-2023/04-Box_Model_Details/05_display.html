@@ -18,12 +18,27 @@
 
         #box2 {
             background-color: green;
-            display: none;
+            /* display: none; */
+            visibility:hidden;
         }
 
         #box3 {
             background-color: red;
         }
+        a{
+            /* display: block; */
+            display: inline-block;
+            width: 100px;
+        }
+        /* 
+        inline-block: bir elementin inline olmaa devam etmesini ancak bazı block özelliklerini kazanmasını sağlar.
+        inline elemente etki etmeyen özellikler;
+        1) width-height
+        2)margin-top, margin-bottom
+        3) padding-top, padding-bottom
+        eğer bir inline elemente, yukarıdaki özelliklerin etki etmesini istiyorsak onu inline block yapmalıyız.
+        // Eğer bir block elementin inline olmasını ama block özelliklerini taşımaya devam etmesini istiyorsak onu inline-block yapmalıyız.
+        */
     </style>
 </head>
 
@@ -43,6 +58,9 @@
         <div class="box" id="box1">First Box</div>
         <div class="box" id="box2">Second Box</div>
         <div class="box" id="box3">Third Box</div>
+        <a href="#">Google</a>
+        <a href="#">Microsoft</a>
+
     </div>
 
 </body>

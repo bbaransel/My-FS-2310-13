@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#main-header {
+    background-color: tomato;
+    padding: 10px 25px;
+    height: 65px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#main-header>a {
+    color: cyan;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#main-nav {
+    display: inline-block;
+    width: calc(100% - 160px);
+    /* normalde Movie App yazısının widthi 155px ama verdiğimiz paddingin değerini 155in üstüne ekliyoruz */
+    text-align: end;
+}
+
+#main-header>nav>a {
+    display: inline-block;
+    background-color: blueviolet;
+    color: chartreuse;
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    padding: 7px;
+    border-radius: 10px;
+    /* line-height: 1; */
+    font-size: 16px;
+
+}
+
+#main-nav a:hover {
+    background-color: chartreuse;
+    color: blueviolet;
+    height: 45px;
+    padding: 10.5px;
+}
+
+#main-content {
+    height: calc(100vh - 65px);
+}
+
+#show-case {
+    background-color: aqua;
+    height: 30%;
+}
