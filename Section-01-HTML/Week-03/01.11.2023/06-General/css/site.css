@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+:root {
+    --primary-color: #219C90;
+    --secondary-color: #E9B824;
+    --text-color: #EE9322;
+    --light-color: #D83F31;
+    --black-color: #000000;
+    --white-color: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.container {
+    width: 90vw;
+    margin: 0 auto;
+    /* background-color: var(--secondary-color); */
+    color: var(--black-color);
+}
+
+.header {
+    /* background-color: violet; */
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+
+.header-logo {
+    /* background-color: aqua; */
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.main-nav {
+    /* width: 50%; */
+    /* background-color: tomato; */
+}
+
+.main-nav-items {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    /* gap: 20px; */
+    column-gap: 20px;
+}
+
+.main-nav-item {
+    /* margin-left: 20px; */
+    height: 36px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-nav-item a {
+    height: 100%;
+    width: 100%;
+    font-weight: 300;
+    /* text-align: center; align-items veya justify-content kullanınca işe yaramıyor bu komut */
+    border: 1px solid var(--primary-color);
+    border-radius: 17%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-nav-item a:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.main {
+    /* background-color: aquamarine; */
+    /* border: 1px solid black; */
+}
+
+#show-case {
+    background: linear-gradient(to top right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)), url("/images/home-bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#show-case-content {
+    height: 40%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 17px;
+    /* background-image: url("/images/home-bg.jpeg"); */
+}
+
+
+#show-case-content h2 {
+    font-size: 80px;
+    font-weight: 300;
+    color: var(--white-color);
+}
+
+#show-case-content h3 {
+    color: var(--white-color);
+}
+
+.how-it-works {
+    display: flex;
+    gap: 40px;
+    padding: 25px;
+}
+
+.fa-solid {
+    font-size: 40px;
+    padding: 25px;
+    color: var(--primary-color);
+}
