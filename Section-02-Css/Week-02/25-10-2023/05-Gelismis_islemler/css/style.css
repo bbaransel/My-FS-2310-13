@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+body {
+    font-family: Ubuntu;
+}
+
+#main-header {
+    background-color: #0C356A;
+    padding: 0.6em 1.5em;
+    height: 4em;
+}
+
+a {
+    text-decoration: none;
+}
+
+#main-header>a {
+    color: #FFC436;
+
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+#main-nav {
+    display: inline-block;
+    width: calc(100% - 160px);
+    /* normalde Movie App yazısının widthi 155px ama verdiğimiz paddingin değerini 155in üstüne ekliyoruz */
+    text-align: end;
+}
+
+#main-header>nav>a {
+    display: inline-block;
+    background-color: #0174BE;
+    color: #FFF0CE;
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    padding: 7px;
+    border-radius: .6em;
+    /* line-height: 1; */
+    font-size: 1em;
+
+}
+
+#main-nav a:hover {
+    background-color: #FFF0CE;
+    color: #0174BE;
+    font-weight: 400;
+    font-size: 1.2em;
+    height: 2.5em;
+    padding: .6em .4em;
+}
+
+#main-content {
+    height: calc(100vh - 4em);
+}
+
+#show-case {
+    background-color: #0174BE;
+    /* height: 30%; */
+    /* text-align: center; */
+    /* text align center inheritance olsa da biz yine de aşağıya yazıyoruz daha iyi kavramak için. Çünkü normalde farklı komutlarda ilgili elemente yazmak daha doğru bazı komutlar inherit olmayabilir. */
+    padding: 6em 0;
+}
+
+#show-case h1 {
+    text-align: center;
+    font-size: 3em;
+    color: #FFF0CE;
+}
+
+#how-it-works h2 {
+    font-weight: 400;
+}
+
+.sample {
+    background-color: blue;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.m-1 {
+    margin: 4px;
+}
+
+.m-2 {
+    margin: 8px;
+}
+
+.m-3 {
+    margin: 16px;
+}
+
+.m-4 {
+    margin: 24px;
+}
+
+.m-5 {
+    margin: 32px;
+}
