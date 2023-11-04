@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap');
+@import url("colors.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+    font-size: 18px;
+    color: var(--text-primary);
+    font-weight: 300;
+    /* padding-top: 70px; */
+
+}
+
+.main-header {
+    height: 70px;
+    background-color: var(--bg-gray);
+    opacity: .7;
+    /* position: static; */
+    /* position özelliğinin default değeri statictir. Position static olan bir element top, bottom, left ve right özelliklerinden etkilenmez. İlgili element akışta kalır.  
+    */
+    /* 
+    Position fixed kullanılırsa, ilgili element artık top, bottom, left ve right özelliklerinden etkilenir.
+    İlgili elementin akışın dışına çıkartır.
+    */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* top: 50px; */
+}
+
+.navbar {
+    height: 100%;
+}
+
+.brand {
+    float: left;
+    width: 20%;
+    height: 100%;
+    display: table;
+    padding-left: 15px;
+}
+
+.brand span,
+.brand i {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+    padding-right: 15px;
+}
+
+.navbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.main-header ul {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+}
+
+/* 
+main {
+    padding-top: 70px;
+} */
+.whatsapp {
+    font-size: 70px;
+    position: fixed;
+    /* 
+    Position sticky kullanılırsa ilgili element akışta kalarak, belirtilen top, bottom, left ve right özelliklerinden etkilenir. Doğal olarak default hali akışta kalır.
+    */
+    /* position: sticky; */
+    right: 20px;
+    bottom: 20px;
+    /* top: 0px; */
+}
+
+.main-hero {
+    height: 100vh;
+    background-image: url(/images/bg-main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
