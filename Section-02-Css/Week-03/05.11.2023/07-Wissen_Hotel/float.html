@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+        .container{
+            background-color: aquamarine;
+            /* overflow: auto; */
+            /* overflow: scroll; */
+
+        }
+        .container::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            /* float: left; */
+        }
+
+        #red {
+            background-color: red;
+            float: left;
+        }
+
+        #blue {
+            background-color: blue;
+            float: right;
+        }
+
+        #yellow {
+            background-color: yellow;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Burası Container</h3>
+        <div class="box" id="red"></div>
+        <div class="box" id="blue"></div>
+        <div class="box" id="yellow"></div>
+    </div>
+    <div class="">
+        <h3>selam</h3>
+    </div>
+</body>
+
+</html>

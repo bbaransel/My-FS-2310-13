@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,300&display=swap');
+@import url("colors.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Roboto;
+    font-size: 18px;
+    color: var(--text-primary);
+    font-weight: 300;
+    /* padding-top: 70px; */
+
+}
+
+a {
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.main-header {
+    height: 100px;
+    background-color: rgba(0, 0, 0, .6);
+    /* opacity: .7; */
+    /* position: static; */
+    /* position özelliğinin default değeri statictir. Position static olan bir element top, bottom, left ve right özelliklerinden etkilenmez. İlgili element akışta kalır.  
+    */
+    /* 
+    Position fixed kullanılırsa, ilgili element artık top, bottom, left ve right özelliklerinden etkilenir.
+    İlgili elementin akışın dışına çıkartır.
+    */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    /* Elementleri default olarak z-index değeri 0dır. Eğer biz elementlerin birbirlerinin üst/altlarında görünmelerine sebep olacak değişiklikler yaptıysak; z-index değeriyle oynayarak bu problemleri çözebiliriz. z-index büyüdükçe ilgili element üsttedir, küçüldükçe alttadır. */
+    /* top: 50px; */
+}
+
+.navbar {
+    height: 100%;
+}
+
+.navbar>a {
+    color: var(--text-white);
+    font-size: 45px;
+    font-weight: normal;
+}
+
+.brand {
+    float: left;
+    /* width: 25%; */
+    height: 100%;
+    color: var(--text-white);
+    display: table;
+    padding-left: 15px;
+}
+
+.brand span,
+.brand i {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+}
+
+.brand span {
+    padding-left: 10px;
+}
+
+.menu {
+    width: 100%;
+    height: 100%;
+    padding-right: 15px;
+}
+
+.navbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.menu ul {
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.menu a {
+    transition-duration: 1s;
+}
+
+.menu a:hover {
+    border-bottom: solid 1px var(--text-warning);
+}
+
+/* 
+main {
+    padding-top: 70px;
+} */
+.whatsapp {
+    font-size: 70px;
+    position: fixed;
+    /* 
+    Position sticky kullanılırsa ilgili element akışta kalarak, belirtilen top, bottom, left ve right özelliklerinden etkilenir. Doğal olarak default hali akışta kalır.
+    */
+    /* position: sticky; */
+    right: 20px;
+    bottom: 20px;
+    /* top: 0px; */
+}
+
+.main-hero {
+    height: 100vh;
+    background-image: url(/images/bg-main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dark {
+    /* Position absolute kullanıldığında ilgili element akıştan çıkar. Top, bottom, left, right özelliklerinden etkilenir. Bu değerler belgeye göre (sayfaya göre) çalışır. Örn: top:100px dediğinizde, sayfanın en üst kısmını referans alarak yukarıdan 100px mesafe ile yerleşir. */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+}
+
+.main-hero h1 {
+    font-size: 50px;
+    color: var(--text-white);
+    z-index: 1;
+}
+
+/* .main-hero-inner{
+    width: 50%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+} */
+.main-hero p {
+    font-size: 25px;
+    color: var(--text-light);
+    z-index: 1;
+}
+
+.main-hero a {
+    z-index: 1;
+    background-color: var(--bg-primary);
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 160px;
+}
+
+.main-hero a i {
+    margin-right: 8px;
+}
+
+.tittle {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    padding-top: 100px;
+    color: var(--text-dark);
+}
+
+.main-services {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    column-gap: 50px;
+}
+
+.service-item {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 25px;
+
+}
+
+.service-item i {
+    font-size: 75px;
+    color: var(--text-light);
+}
+
+.service-item h2 {
+    color: var(--text-secondary);
+}
+
+.service-item p {
+    text-align: center;
+}
+
+.main-about {
+    display: flex;
+    padding: 50px 0;
+}
+
+.about-image {
+    width: 50vw;
+    height: 60vh;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-text {
+    width: 50vw;
+    padding: 0 20px;
+    text-indent: 30px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    line-height: 40px;
+}
+
+.main-rooms {}
+
+.main-rooms h3 {
+    text-align: center;
+    color: var(--text-secondary);
+    margin: 10px;
+}
+
+.rooms-cards {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 30px;
+}
+
+.room {
+    width: 20%;
+    height: 500px;
+    /* background-color: var(--bg-gray); */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: .5px solid var(--text-secondary);
+    border-radius: 10px;
+}
+
+.room h4 {
+    font-size: 30px;
+    background-color: var(--bg-warning);
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--text-white);
+}
+
+.room ul {
+    list-style-type: none;
+}
+
+.room p {
+    background-color: var(--bg-success);
+    color: var(--text-white);
+    font-weight: 500;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition-duration: .5s;
+}
+
+.room p:hover {
+    width: 70px;
+    height: 70px;
+    background-color: var(--bg-warning);
+}
+
+.main-contact {
+    display: flex;
+    padding: 50px 0;
+}
+
+.map {
+    width: 70vw;
+}
+
+.main-contact form {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.main-contact div {
+    margin-bottom: 15px;
+    /* width: 200px;
+    font-weight: normal;
+    color: var(--text-secondary); */
+}
+
+.main-contact label {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    color: var(--text-secondary);
+    font-weight: normal;
+}
+
+.main-contact input {
+    width: 250px;
+    height: 40px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.main-contact textarea {
+    font-size: 20px;
+    width: 250px;
+}
+
+.button {
+    text-align: end;
+}
+
+.main-contact button {
+    background-color: var(--bg-success);
+    color: var(--text-white);
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-dark);
+    height: 100px;
+    padding: 0 30px;
+}
+
+.social a {
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+footer p {
+    color: var(--text-white);
+    margin-right: 60px;
+}
+
+@media(max-width: 1310px) {
+    .brand span{
+        font-size: 28px;
+    }
+}
+@media(max-width: 720px) {
+    .brand span{
+        display: none;
+    }
+}
