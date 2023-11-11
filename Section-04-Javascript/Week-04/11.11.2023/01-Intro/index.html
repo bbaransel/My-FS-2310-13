@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+
+</head>
+
+<body>
+    <script src="app.js">
+        // Buraya javascript kodu yazılmaz!!
+    </script>
+    <button id="button" onclick="alert('Butona Tıkladın!( Yöntem-1 - inline)'); ">Bana Tıkla</button>
+    <!-- <button id="button-1">Bana Tıkla</button>
+    <button id="button-2">Bana Tıkla</button> -->
+
+
+    <script>
+        document.getElementById("button").addEventListener("click", () => {
+            alert("Butona Tıkladın! (Yöntem-2-Internal)")
+        })
+    </script>
+
+
+</body>
+
+</html>
