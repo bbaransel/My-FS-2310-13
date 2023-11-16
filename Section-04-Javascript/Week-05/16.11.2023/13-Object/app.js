@@ -53,3 +53,11 @@ for (let i = 0; i < studentsCount; i++) {
 }
 let average = total / studentsCount;
 console.log("Bu sınıfın yaş ortalaması: " + average.toFixed(2));
+
+/* İçerisinde Ahmet Mehmet ve Yeşim değerlerinin olduğu bir dizi tanımlayın. Ayrıca içerisinde inşaat müh. Yazılım müh. ve Mimarlık değerlerinin olduğu bir başka dizi daha tanımlayın. Sonra içinde name ve department bilgilerinin yer aldığı 3 adet student objesini şu şekilde oluşturun:
+Üç öğrenciye rastgele bölüm atansın ve örnek olarak şu şekilde nesneler oluşsun:
+{
+    name:"Ahmet",
+    department: "Yazılım Müh"
+}
+*/
