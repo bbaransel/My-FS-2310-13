@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App FS-2310-13</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div id="title" class="card-header text-center text-danger display-4">Todo App</div>
+                    <div class="card-body mt-1">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" id="txt-task-description" class="form-control">
+                                <button type="submit" class="btn btn-success" id="btn-add-task"><i
+                                        class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-header mt-1 d-flex justify-content-between">
+                        <div id="filters" class="d-flex gap-3">
+                            <span id="all" class="active">All</span>
+                            <span id="pending">Pending</span>
+                            <span id="completed">Completed</span>
+                        </div>
+                        <div>
+                            <button id="btn-clear-all" class="btn btn-danger btn-sm">Clear All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card mt-3">
+
+                    <ul class="list-group" id="task-list">
+
+                        <!-- Buraya yazılacak kodlar app.js tarafından hazırlanacaktır.-->
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

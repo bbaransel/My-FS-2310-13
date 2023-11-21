@@ -1,0 +1,14 @@
+﻿.checked {
+    text-decoration: line-through;
+    background-color: rgb(243, 179, 168) !important;
+}
+
+#filters span {
+    cursor: pointer;
+    font-weight: normal;
+}
+
+#filters span.active {
+    font-weight: bold;
+    color: darkcyan;
+}
