@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+#title {
+    color: tomato;
+    font-weight: normal;
+    font-size: 45px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition-duration: .2s;
+    /* transition: all 1s; */
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.main-modal {
+    background-color: rgba(127, 127, 127, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-modal-none {
+    display: none;
+}
+
+.modal {
+    background-color: white;
+    height: 250px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(224, 220, 220, .5);
+    padding: 10px 15px;
+}
+
+.modal-header-title {
+    color: tomato;
+    font-weight: normal;
+}
+
+.btn-close-modal {
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.btn-close-modal:hover {
+    color: gray;
+}
+
+.modal-content {
+    padding: 10px 15px;
+}
+
+.modal-footer {
+    text-align: end;
+    border-top: 2px solid rgb(224, 220, 220, .5);
+    padding: 10px 15px;
+}
