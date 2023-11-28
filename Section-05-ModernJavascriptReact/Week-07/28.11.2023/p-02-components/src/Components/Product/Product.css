@@ -1,0 +1,32 @@
+.Product {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: 5px;
+
+}
+
+.Product img {
+    /* border-radius: 5px; */
+}
+
+.Product h5 {
+    color: red;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.Product p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.Product button {
+    cursor: pointer;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 7px 14px;
+    font-weight: bold;
+}
