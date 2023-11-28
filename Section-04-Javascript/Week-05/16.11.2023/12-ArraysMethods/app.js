@@ -20,7 +20,7 @@ result = products1.concat(products2);
 
 // students dizisindeki ceyda değerini taşıyan elemanın içeriğini ece olarak değiştir.
 
-// students[students.indexOf("ceyda")] = "ece";
+students[students.indexOf("ceyda")] = "ece";
 students.splice(students.indexOf("ceyda"), 1)
 // result = students.splice(2,3);
 
