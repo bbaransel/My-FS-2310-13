@@ -15,14 +15,18 @@ const TodoWrapper = ({ tasks }) => {
         }]);
     };
     const toggleComplete = id => {
-        console.log(id);
         setTaskList(
             taskList.map((task) => task.id === id ? { ...task, isComplated: !task.isComplated } : task)
         );
 
     };
 
-    const deleteTask = id => setTaskList(taskList.filter((task) => task.id != id));
+    const deleteTask = id => {
+        setTaskList(
+            taskList.filter(task => task.id != id)
+        );
+    }
+
     const approval = id => {
         let approval = window.confirm("Emin misiniz?");
         if (approval) deleteTask(id);
@@ -35,7 +39,7 @@ const TodoWrapper = ({ tasks }) => {
 
     const updateTask = (id, _desc) => {
         setTaskList(
-            taskList.map(task => task.id == id ? { ...task, isEditing: !task.isEditing, _desc: _desc } : task)
+            taskList.map(task => task.id === id ? { ...task, isEditing: !task.isEditing, _desc: _desc } : task)
         )
     }
     return (
