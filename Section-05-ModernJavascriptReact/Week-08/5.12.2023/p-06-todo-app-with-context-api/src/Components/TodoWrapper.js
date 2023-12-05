@@ -74,11 +74,10 @@ const TodoWrapper = ({ tasks }) => {
     // }
     // showPending, showComplated, showAll
     return (
-        <TodoContext.Provider value={{ taskList, setTaskList, updateTask, toggleComplete, toggleEditing, deleteTask, approval, addTask, clearAll, filterMode }}>
+        <TodoContext.Provider value={{ taskList, setTaskList, updateTask, toggleComplete, toggleEditing, deleteTask, approval, addTask, clearAll, filterMode, setFilterMode }}>
             <div className='container p-5 bg-dark-subtle'>
                 <TodoAddForm />
                 <TodoFilter />
-
                 <TodoContainer />
             </div>
         </TodoContext.Provider>
