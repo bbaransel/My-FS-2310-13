@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06-NumberMethods", "P06-NumberMethods.csproj", "{758C2FE7-FEAA-46BA-8C47-C31440DCF750}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{758C2FE7-FEAA-46BA-8C47-C31440DCF750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758C2FE7-FEAA-46BA-8C47-C31440DCF750}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758C2FE7-FEAA-46BA-8C47-C31440DCF750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758C2FE7-FEAA-46BA-8C47-C31440DCF750}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {116BBFA4-1765-409A-87F7-87448DB9B2CB}
+	EndGlobalSection
+EndGlobal

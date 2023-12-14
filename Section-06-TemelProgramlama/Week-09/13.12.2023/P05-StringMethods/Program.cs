@@ -1,4 +1,4 @@
-﻿namespace P05_Methods_01
+﻿namespace P05-StringMethods
 {
     internal class Program
     {
