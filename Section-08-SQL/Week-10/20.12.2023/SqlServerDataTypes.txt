@@ -1,0 +1,38 @@
+Veri Tipleri
+
+Metinsel Tipler
+    1- char: 
+        İçerisinde metinsel değerler tutar.
+        Unicode karakterleri barındırmaz.
+        İçinde en fazla 8000 karakterlik veri tutabilir.
+        char(n) şeklinde kullanılır. Bellekte "n" karakterlik yer kaplar.
+            Name-char(20)===> 'Ali'-> 20 karakter yer tutar.
+
+    2- varchar:
+        char'dan farklı olarak;
+        varchar(n) olarak kullanılır. Bellekte verinin uzunluğu kadar yer kaplar. n, maximum sınırı belirler.
+            Name-varchar(20)===> 'Ali' -> 3 karakter yer tutar.
+
+    3- nchar:
+        char'dan farklı olarak;
+        Unicode karakterleri barındıbilir.
+        Max 4000 karakterlik veri tutabilir.
+        Diğer tüm özellikleri char ile aynıdır.
+
+    4- nvarchar:
+        varchar'dan farklı olarak;
+        Unicode karakterleri tutabilir.
+        Max 4000 karakterlik veri tutabilir.
+        Diğer tüm  özellikleri varchar ile aynıdır.
+
+Sayısal Tipler
+    1- bit: İçerisinde 0 ya da 1 değeri tutar. Yani diğer programlama dillerindeki bool, boolean gibi logical tiplere karşılık gelir.
+    2- tinyint(1 byte), smallint(2 byte), int(4 byte), bigint(8 byte) gibi tam sayı değerler tutan tipler vardır.
+    3- decimal, numeric, money gibi ondalık sayı tipleri vardır. Hepsi bellekte 8 byte yer tutar.
+    
+Tarihsel Tipler
+    1- date: yyyy-aa-gg formatında tarih bilgisi tutar. 3 byte yer tutar.
+    2- datetime: yyyy-aa-gg ss-dd-sn-sl(saat-dakika-saniye-salise) formatında tarih saat bilgisi tutar. 8 byte yer tutar. 
+        1.1.1753 -31.12.9999 tarihleri arasında veri tutar.
+    3- datetime2: datetime ile aynı format. Saliseyi daha hassas tutar.10 byte yer tutar. 1.1.0001 - 31.12.9999
+    4- time: ss-dd-sn-sl formatında saat bilgisi tutar. 3 byte yer kaplar.
