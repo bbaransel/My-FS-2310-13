@@ -1,0 +1,26 @@
+@using Proje06_MvcWithSql.ViewModels
+@model CategoriesProducts
+@{
+    ViewData["Title"] = "Index";
+    List<CategoryViewModel> categoryList = Model.Categories;
+}
+<table class="table table-sm table-striped table-primary">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CategoryViewModel c in categoryList)
+        {
+            <tr>
+                <th scope="row">@c.Id</th>
+                <td>@c.Name</td>
+                <td>@c.Desc</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
