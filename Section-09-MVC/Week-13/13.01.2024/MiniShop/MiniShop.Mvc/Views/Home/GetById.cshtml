@@ -1,0 +1,16 @@
+﻿@model ProductViewModel
+
+<div class="card mb-3 w-50 m-auto">
+    <div class="row g-0">
+        <div class="col-md-4 py-2 ps-2 d-flex justify-content-center align-items-center">
+            <img src="~/images/@Model.ImageUrl" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title display-6 fw-bold mb-4">@Model.Name</h5>
+                <p class="card-text fs-4">@Model.Properties</p>
+                <p class="card-text fs-1 text-end mt-5"><small class="text-body-secondary">@Model.Price ₺</small></p>
+            </div>
+        </div>
+    </div>
+</div>
