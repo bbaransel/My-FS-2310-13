@@ -1,0 +1,37 @@
+﻿@model ProductViewModel
+
+<div class="container w-50">
+    <h1 class="display-6 text-primary">Ürün ekle</h1>
+    <hr />
+    <form asp-area="admin" asp-controller="Product" asp-action="Create" method="post">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Ürün Adı</label>
+                <input asp-for="Name" type="text" class="form-control" />
+            </div>
+            <div class="col-md-3 mb-2">
+                <label class="form-label">Fiyat</label>
+                <input asp-for="Price" type="text" class="form-control" />
+            </div>
+            <div class="col-md-3 mb-4 d-flex align-items-center gap-2 flex-column">
+                <label class="form-label">Ana Sayfa</label>
+                <input asp-for='IsHome' type="checkbox" class="form-check-input" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Url</label>
+                <input asp-for='Url' type="text" class="form-control" />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Resim</label>
+                <input asp-for='ImageUrl' type="text" class="form-control" />
+            </div>
+            <div class="col-md-12 mb-3">
+                <label class="form-label">Özellikler</label>
+                <textarea asp-for='Properties' type="text" rows="5" class="form-control" placeholder="Özellik giriniz..." ></textarea>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success float-end">Kaydet</button>
+            </div>
+        </div>
+    </form>
+</div>
