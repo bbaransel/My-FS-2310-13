@@ -15,9 +15,6 @@ namespace MiniShop.Data.Concrete
         {
         }
 
-        //public CategoryRepository(DbContext _appDbContext) : base(_appDbContext)
-        //{
-        //}
         AppDbContext AppContext
         {
             get

@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MiniShop.Entity;
+using MiniShop.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniShop.Data.Config
+namespace MiniShop.Data.Concrete.Configs
 {
     public class ProductConfig : IEntityTypeConfiguration<Product>
     {
@@ -15,25 +15,25 @@ namespace MiniShop.Data.Config
         {
             builder.HasKey(p => p.Id);
             builder.Property(p => p.Id).ValueGeneratedOnAdd();
-            builder.Property(p => p.Name)
-                .IsRequired()
-                .HasMaxLength(100);
-            builder.Property(p=>p.Properties)
-                .IsRequired()
-                .HasMaxLength(1000);
-            builder.Property(p => p.Price).IsRequired();
-            builder.Property(p=>p.ImageUrl).IsRequired();
-            builder.ToTable("Products");
+            builder.Property(p=>p.Name).IsRequired().HasMaxLength(100);
+            builder.Property(p => p.Properties).IsRequired().HasMaxLength(500);
+            builder.Property(p => p.Url).IsRequired().HasMaxLength(100);
+            builder.Property(p => p.ImageUrl).IsRequired().HasMaxLength(500);
+            builder.Property(p => p.Price).IsRequired().HasColumnType("real"); // SQLite için SQL Server için real yerine money
+            //builder.Property(p => p.CreatedDate).HasDefaultValueSql("getdate()"); // SQL Server için
+            builder.Property(p => p.CreatedDate).HasDefaultValueSql("date('now')"); //SQLite için
+            builder.Property(p => p.ModifiedDate).HasDefaultValueSql("date('now')"); //SQLite için
+            builder.ToTable("Product");
             builder.HasData(
                 new Product
                 {
-                    Id=1,
-                    Name="IPhone 14",
-                    Price=59000,
-                    Properties="Harika bir telefon",
-                    Url="iphone-14",
-                    ImageUrl="1.png",
-                    IsHome=true
+                    Id = 1,
+                    Name = "IPhone 14",
+                    Price = 59000,
+                    Properties = "Harika bir telefon",
+                    Url = "iphone-14",
+                    ImageUrl = "1.png",
+                    IsHome = true
                 },
                 new Product
                 {
