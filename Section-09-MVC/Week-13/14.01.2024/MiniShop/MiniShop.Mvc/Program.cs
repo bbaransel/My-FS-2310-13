@@ -12,6 +12,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data S
 //soyutlama yaptýðýmýz yer
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
 var app = builder.Build();
 
