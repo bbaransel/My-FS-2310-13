@@ -1,0 +1,108 @@
+﻿@model List<ProductViewModel>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Ürün Listesi</h1>
+                </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">DataTables</li>
+                        </ol>
+                    </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="MyDataTable" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Ürün</th>
+                                        <th>Fiyat</th>
+                                        <th>Ana Sayfa</th>
+                                        <th>Aktif</th>
+                                        <th>#</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var p in Model)
+                                    {
+                                        <tr>
+                                            <td>@p.Id</td>
+                                            <td>
+                                                @p.Name
+                                            </td>
+                                            <td>@p.Price ₺</td>
+                                            <td>
+                                                <form id="isHomeForm_@p.Id" asp-area="Admin" asp-controller="Product" asp-action="UpdateIsHome" asp-route-id="@p.Id" method="post">
+                                                <div class="custom-control custom-switch">
+                                                    <input 
+                                                        onchange="document.getElementById('isHomeForm_@p.Id').submit();"
+                                                        type="checkbox" class="custom-control-input" id="isHome_@p.Id" @(
+                                                        p.IsHome ? "checked" : ""
+                                                    )
+                                                    />
+                                                    <label class="custom-control-label" for="isHome_@p.Id"></label>
+                                                    
+                                                    </div>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input" id="isActive_@p.Id" @(
+                                                       p.IsActive ? "checked" : ""
+                                                       ) />
+                                                    <label class="custom-control-label" for="isActive_@p.Id"></label>
+
+                                                </div>
+                                            </td>
+                                            <td>#</td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Ürün</th>
+                                        <th>Fiyat</th>
+                                        <th>Ana Sayfa</th>
+                                        <th>Aktif</th>
+                                        <th>#</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+@section Styles{
+@await Html.PartialAsync("_DataTablesCssPartial")
+}
+@section Scripts{
+    @await Html.PartialAsync("_DataTablesJsPartial")
+}
