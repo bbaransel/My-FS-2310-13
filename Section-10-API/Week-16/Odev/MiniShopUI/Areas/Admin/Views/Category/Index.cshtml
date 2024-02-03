@@ -41,30 +41,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var p in Model)
+                                    @foreach (var c in Model)
                                     {
                                         <tr>
-                                            <td>@p.Id</td>
+                                            <td>@c.Id</td>
                                             <td>
                                                 <a asp-area="Admin"
                                                    asp-controller="Category"
                                                    asp-action="Edit"
-                                                   asp-route-id="@p.Id"
+                                                   asp-route-id="@c.Id"
                                                    method="get"
-                                                   class="btn btn-link">@p.Name</a>
+                                                   class="btn btn-link">@c.Name</a>
                                             </td>
                                             <td>
-                                                <form id=isActiveForm_@p.Id
+                                                <form id=isActiveForm_@c.Id
                                                       asp-area="Admin"
                                                       asp-controller="Category"
                                                       asp-action="UpdateIsActive"
-                                                      asp-route-id="@p.Id"
+                                                      asp-route-id="@c.Id"
                                                       method="post">
                                                     <div class="custom-control custom-switch">
-                                                        <input onchange="document.getElementById('isActiveForm_@p.Id').submit();"
-                                                               type="checkbox" class="custom-control-input" id="isActive_@p.Id"
-                                                        @(p.IsActive ? "checked" : "") />
-                                                        <label class="custom-control-label" for="isActive_@p.Id"></label>
+                                                        <input onchange="document.getElementById('isActiveForm_@c.Id').submit();"
+                                                               type="checkbox" class="custom-control-input" id="isActive_@c.Id"
+                                                        @(c.IsActive ? "checked" : "") />
+                                                        <label class="custom-control-label" for="isActive_@c.Id"></label>
                                                     </div>
                                                 </form>
                                             </td>
@@ -74,13 +74,13 @@
                                                     <a asp-area="Admin"
                                                        asp-controller="Category"
                                                        asp-action="Edit"
-                                                       asp-route-id="@p.Id"
+                                                       asp-route-id="@c.Id"
                                                        method="get"
                                                        class="btn btn-warning btn-sm"><i class="far fa-edit"></i></a>
                                                     <a asp-area="Admin"
                                                        asp-controller="Category"
                                                        asp-action="Delete"
-                                                       asp-route-id="@p.Id"
+                                                       asp-route-id="@c.Id"
                                                        method="get"
                                                        class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                                 }
@@ -89,13 +89,13 @@
                                                     <a asp-area="Admin"
                                                        asp-controller="Category"
                                                        asp-action="SoftDelete"
-                                                       asp-route-id="@p.Id"
+                                                       asp-route-id="@c.Id"
                                                        method="get"
                                                        class="btn btn-success btn-sm"><i class="fas fa-undo-alt"></i></a>
                                                     <a asp-area="Admin"
                                                        asp-controller="Category"
                                                        asp-action="HardDelete"
-                                                       asp-route-id="@p.Id"
+                                                       asp-route-id="@c.Id"
                                                        method="get"
                                                        class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                                 }
