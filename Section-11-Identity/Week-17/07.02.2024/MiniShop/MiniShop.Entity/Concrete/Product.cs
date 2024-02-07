@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace MiniShop.Entity.Concrete
 {
-    public class Product:BaseEntity
+    public class Product:BaseEntity, IMainEntity
     {
+        public int Id { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
         public decimal Price { get; set; }
         public string Properties { get; set; }
         public string ImageUrl { get; set; }

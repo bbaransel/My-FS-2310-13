@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace MiniShop.Entity.Concrete
 {
-    public class Category:BaseEntity, IMainEntity
+    public class ShoppingCartItem:IMainEntity
     {
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public string Description { get; set; }
-        public List<ProductCategory> ProductCategories { get; set; }//Navigation Property
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+        public int ShoppingCartId { get; set; }
+        public ShoppingCart ShoppingCart { get; set; }
+        public int Quantity { get; set; }
     }
 }

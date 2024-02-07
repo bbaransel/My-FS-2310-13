@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MiniShop.Data.Concrete.Contexts;
 
@@ -10,114 +11,14 @@ using MiniShop.Data.Concrete.Contexts;
 namespace MiniShop.Data.Migrations
 {
     [DbContext(typeof(MiniShopDbContext))]
-    partial class MiniShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240207184745_AddingIdendityAndOrder2")]
+    partial class AddingIdendityAndOrder2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.15");
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
-                {
-                    b.Property<string>("LoginProvider")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ProviderKey")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("LoginProvider", "ProviderKey");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("AspNetUserLogins", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RoleId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("UserId", "RoleId");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetUserRoles", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LoginProvider")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("UserId", "LoginProvider", "Name");
-
-                    b.ToTable("AspNetUserTokens", (string)null);
-                });
 
             modelBuilder.Entity("MiniShop.Entity.Concrete.Category", b =>
                 {
@@ -160,169 +61,58 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7461),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5549),
                             Description = "TV kategorisi",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7475),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5561),
                             Name = "Televizyon",
                             Url = "televizyon"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7478),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5565),
                             Description = "Bilgisayar kategorisi",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7478),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5566),
                             Name = "Bilgisayar",
                             Url = "bilgisayar"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7479),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5567),
                             Description = "Elektronik Eşya kategorisi",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7479),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5567),
                             Name = "Elektronik Eşya",
                             Url = "elektronik-esya"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7480),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5568),
                             Description = "Beyaz Eşya kategorisi",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7481),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5568),
                             Name = "Beyaz Eşya",
                             Url = "beyaz-esya"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7481),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5569),
                             Description = "Telefon kategorisi",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 308, DateTimeKind.Local).AddTicks(7482),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 328, DateTimeKind.Local).AddTicks(5569),
                             Name = "Telefon",
                             Url = "telefon"
                         });
-                });
-
-            modelBuilder.Entity("MiniShop.Entity.Concrete.Identity.Role", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex");
-
-                    b.ToTable("AspNetRoles", (string)null);
-                });
-
-            modelBuilder.Entity("MiniShop.Entity.Concrete.Identity.User", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("City")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("DateOfBirth")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
                 });
 
             modelBuilder.Entity("MiniShop.Entity.Concrete.Order", b =>
@@ -452,12 +242,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2217),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1516),
                             ImageUrl = "1.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2223),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1520),
                             Name = "IPhone 14",
                             Price = 59000m,
                             Properties = "Harika bir telefon",
@@ -466,12 +256,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2230),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1524),
                             ImageUrl = "2.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2230),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1524),
                             Name = "IPhone 14 Pro",
                             Price = 69000m,
                             Properties = "Bu da harika bir telefon",
@@ -480,12 +270,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2232),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1526),
                             ImageUrl = "3.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2232),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1526),
                             Name = "Samsung S23",
                             Price = 49000m,
                             Properties = "İdare eder",
@@ -494,12 +284,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2233),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1527),
                             ImageUrl = "4.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2234),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1528),
                             Name = "Xaomi Note 4",
                             Price = 39000m,
                             Properties = "Harika bir telefon",
@@ -508,12 +298,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2235),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1529),
                             ImageUrl = "5.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2235),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1529),
                             Name = "MacBook Air M2",
                             Price = 52000m,
                             Properties = "M2nin gücü",
@@ -522,12 +312,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2236),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1530),
                             ImageUrl = "6.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2236),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1530),
                             Name = "MacBook Pro M3",
                             Price = 79000m,
                             Properties = "16 Gb ram",
@@ -536,12 +326,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2239),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1532),
                             ImageUrl = "7.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2239),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1532),
                             Name = "Vestel Çamaşır Makinesi X65",
                             Price = 19000m,
                             Properties = "Akıllı makine",
@@ -550,12 +340,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2240),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1533),
                             ImageUrl = "8.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = false,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2241),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1533),
                             Name = "Arçelik Çamaşır Makinesi A-4",
                             Price = 21000m,
                             Properties = "Süper hızlı makine",
@@ -564,12 +354,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2242),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1534),
                             ImageUrl = "9.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2242),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1535),
                             Name = "Hoop Dijital Radyo X96",
                             Price = 1250m,
                             Properties = "Klasik radyo keyfi",
@@ -578,12 +368,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2243),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1536),
                             ImageUrl = "10.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2243),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1536),
                             Name = "Xaomi Dijital Baskül",
                             Price = 2100m,
                             Properties = "Kilonuzu kontrol edin",
@@ -592,12 +382,12 @@ namespace MiniShop.Data.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2244),
+                            CreatedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1537),
                             ImageUrl = "11.png",
                             IsActive = true,
                             IsDeleted = false,
                             IsHome = true,
-                            ModifiedDate = new DateTime(2024, 2, 7, 21, 48, 46, 309, DateTimeKind.Local).AddTicks(2245),
+                            ModifiedDate = new DateTime(2024, 2, 7, 21, 47, 45, 329, DateTimeKind.Local).AddTicks(1537),
                             Name = "Blaupunkt AC69 Led TV",
                             Price = 9800m,
                             Properties = "Android tv",
@@ -774,57 +564,6 @@ namespace MiniShop.Data.Migrations
                     b.HasIndex("ShoppingCartId");
 
                     b.ToTable("ShoppingCartItems");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.HasOne("MiniShop.Entity.Concrete.Identity.Role", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
-                {
-                    b.HasOne("MiniShop.Entity.Concrete.Identity.User", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
-                {
-                    b.HasOne("MiniShop.Entity.Concrete.Identity.User", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
-                {
-                    b.HasOne("MiniShop.Entity.Concrete.Identity.Role", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("MiniShop.Entity.Concrete.Identity.User", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
-                {
-                    b.HasOne("MiniShop.Entity.Concrete.Identity.User", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("MiniShop.Entity.Concrete.OrderItem", b =>
