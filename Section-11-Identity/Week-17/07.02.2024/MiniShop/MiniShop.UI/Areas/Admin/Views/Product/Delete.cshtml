@@ -36,6 +36,9 @@
                         <label>Son Güncelleme Tarihi:</label>
                         <span>@Model.ModifiedDate</span>
                     </div>
+                    <div>
+                        <img class="mb-3" src="/images/products/@Model.ImageUrl"  style="width:50px"/>
+                    </div>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="btn btn-info">Vazgeç</a>
                         <a asp-area="Admin" asp-controller="Product" asp-action="HardDelete" asp-route-id="@Model.Id" class="btn btn-danger">Kalıcı Olarak Sil</a>
