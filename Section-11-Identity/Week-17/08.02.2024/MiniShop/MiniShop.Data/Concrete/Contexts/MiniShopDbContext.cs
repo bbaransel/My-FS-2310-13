@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MiniShop.Data.Concrete.Configs;
+using MiniShop.Data.Extensions;
 using MiniShop.Entity.Concrete;
 using MiniShop.Entity.Concrete.Identity;
 using System;
@@ -26,6 +27,7 @@ namespace MiniShop.Data.Concrete.Contexts
         public DbSet<OrderItem> OrderItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.SeedData();
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CategoryConfig).Assembly);
             base.OnModelCreating(modelBuilder);
         }
