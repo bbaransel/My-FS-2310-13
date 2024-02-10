@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MiniShop.Business.Abstract;
 using MiniShop.Shared.Helpers.Abstract;
 using MiniShop.Shared.ResponseViewModels;
@@ -45,6 +46,7 @@ namespace MiniShop.UI.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize(Roles = "SuperAdmin")]
         [HttpGet]
         public async Task<IActionResult> Create()
         {

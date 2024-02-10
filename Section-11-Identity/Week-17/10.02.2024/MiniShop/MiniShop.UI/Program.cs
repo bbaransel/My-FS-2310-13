@@ -18,6 +18,40 @@ builder.Services.AddDbContext<MiniShopDbContext>(options =>
 );
 
 builder.Services.AddIdentity<User,Role>().AddEntityFrameworkStores<MiniShopDbContext>().AddDefaultTokenProviders();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    #region Password Options
+    options.Password.RequiredLength = 6;// Parola en az 6 karakter olmalý
+    options.Password.RequireDigit = true;//Parola en az 1 adet sayýsal deðer içermeli
+    options.Password.RequireNonAlphanumeric = true;//Parola özel karakter içermeli
+    options.Password.RequireUppercase = true;// Parola büyük harf içermeli
+    options.Password.RequireLowercase = true;// Parola küçük harf içermeli
+                                             //options.Password.RequiredUniqueChars = // tekrar etmemesi istenilen karakterleri dizi þeklinde verip kullanýlýyor. 
+    #endregion
+    #region Hesap Kilitleme Ayarlarý
+    options.Lockout.MaxFailedAccessAttempts = 3; // Üst üste hatalý giriþ denemesi
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromSeconds(15); // kilitlenmiþ bir hesaba yeniden giriþ yapabilmek için gereken bekleme süresi
+    //options.Lockout.AllowedForNewUsers = true; // Yeniden kayýt olmaya imkan ver
+    #endregion
+    options.User.RequireUniqueEmail = true; //Her email 1 kere kayýt olabilir.
+    options.SignIn.RequireConfirmedEmail = false;
+
+});
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.LogoutPath = "/";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.ExpireTimeSpan = TimeSpan.FromSeconds(45);
+    options.SlidingExpiration = true;
+    options.Cookie = new CookieBuilder
+    {
+        Name = "MiniShop.Security",
+        //Güvenlik önlemleri(default olarak none)
+        HttpOnly = true,
+        SameSite = SameSiteMode.Strict
+    };
+});
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
