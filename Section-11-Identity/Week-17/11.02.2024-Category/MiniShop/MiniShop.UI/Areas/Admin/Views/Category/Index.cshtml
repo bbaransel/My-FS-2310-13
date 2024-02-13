@@ -43,72 +43,82 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var c in Model)
+                                    @if (Model != null && Model.Any())
+                                    {
+                                        @foreach (var c in Model)
+                                        {
+                                            <tr>
+                                                <td>@c.Id</td>
+                                                <td>
+                                                    <a asp-area="Admin"
+                                                    asp-controller="Category"
+                                                    asp-action="Edit"
+                                                    asp-route-id="@c.Id"
+                                                    class="btn btn-link">@c.Name</a>
+                                                </td>
+                                                <td>@c.Description</td>
+                                                <td>
+                                                    <form id="isActiveForm_@c.Id"
+                                                    asp-area="Admin"
+                                                    asp-controller="Category"
+                                                    asp-action="UpdateIsActive"
+                                                    asp-route-id="@c.Id"
+                                                    method="post">
+                                                        <div class="custom-control custom-switch">
+                                                            <input onchange="document.getElementById('isActiveForm_@c.Id').submit();"
+                                                            type="checkbox" class="custom-control-input" id="isActive_@c.Id"
+                                                            @(c.IsActive ? "checked" : "") />
+                                                            <label class="custom-control-label" for="isActive_@c.Id"></label>
+                                                        </div>
+                                                    </form>
+
+                                                </td>
+                                                <td class="text-center">
+                                                    @if (!ViewBag.IsDeleted)
+                                                    {
+                                                        <a asp-area="Admin"
+                                                        asp-controller="Category"
+                                                        asp-action="Edit"
+                                                        asp-route-id="@c.Id"
+                                                        class="btn btn-warning btn-sm">
+                                                            <i class="far fa-edit"></i>
+                                                        </a>
+                                                        <a asp-area="Admin"
+                                                        asp-controller="Category"
+                                                        asp-action="Delete"
+                                                        asp-route-id="@c.Id"
+                                                        class="btn btn-danger btn-sm">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a asp-area="Admin"
+                                                        asp-controller="Category"
+                                                        asp-action="SoftDelete"
+                                                        asp-route-id="@c.Id"
+                                                        class="btn btn-success btn-sm">
+                                                            <i class="fas fa-undo-alt"></i>
+                                                        </a>
+                                                        <a asp-area="Admin"
+                                                        asp-controller="Category"
+                                                        asp-action="HardDelete"
+                                                        asp-route-id="@c.Id"
+                                                        class="btn btn-danger btn-sm">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    }
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
                                     {
                                         <tr>
-                                            <td>@c.Id</td>
-                                            <td>
-                                                <a asp-area="Admin"
-                                                   asp-controller="Category"
-                                                   asp-action="Edit"
-                                                   asp-route-id="@c.Id"
-                                                   class="btn btn-link">@c.Name</a>
-                                            </td>
-                                            <td>@c.Description</td>
-                                            <td>
-                                                <form id="isActiveForm_@c.Id"
-                                                      asp-area="Admin"
-                                                      asp-controller="Category"
-                                                      asp-action="UpdateIsActive"
-                                                      asp-route-id="@c.Id"
-                                                      method="post">
-                                                    <div class="custom-control custom-switch">
-                                                        <input onchange="document.getElementById('isActiveForm_@c.Id').submit();"
-                                                               type="checkbox" class="custom-control-input" id="isActive_@c.Id"
-                                                        @(c.IsActive ? "checked" : "") />
-                                                        <label class="custom-control-label" for="isActive_@c.Id"></label>
-                                                    </div>
-                                                </form>
-
-                                            </td>
-                                            <td class="text-center">
-                                                @if (!ViewBag.IsDeleted)
-                                                {
-                                                    <a asp-area="Admin"
-                                                       asp-controller="Category"
-                                                       asp-action="Edit"
-                                                       asp-route-id="@c.Id"
-                                                       class="btn btn-warning btn-sm">
-                                                        <i class="far fa-edit"></i>
-                                                    </a>
-                                                    <a asp-area="Admin"
-                                                       asp-controller="Category"
-                                                       asp-action="Delete"
-                                                       asp-route-id="@c.Id"
-                                                       class="btn btn-danger btn-sm">
-                                                        <i class="fas fa-trash"></i>
-                                                    </a>
-                                                }
-                                                else
-                                                {
-                                                    <a asp-area="Admin"
-                                                       asp-controller="Category"
-                                                       asp-action="SoftDelete"
-                                                       asp-route-id="@c.Id"
-                                                       class="btn btn-success btn-sm">
-                                                        <i class="fas fa-undo-alt"></i>
-                                                    </a>
-                                                    <a asp-area="Admin"
-                                                       asp-controller="Category"
-                                                       asp-action="HardDelete"
-                                                       asp-route-id="@c.Id"
-                                                       class="btn btn-danger btn-sm">
-                                                        <i class="fas fa-trash"></i>
-                                                    </a>
-                                                }
-                                            </td>
+                                            <td colspan="5">Silinmiş kategori bulunamadı.</td>
                                         </tr>
                                     }
+
                                 </tbody>
                             </table>
                         </div>

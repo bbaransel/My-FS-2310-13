@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MiniShop.Business.Abstract;
+using MiniShop.Shared.ResponseViewModels;
 using MiniShop.Shared.ViewModels;
 using MiniShop.UI.Helpers;
 
@@ -19,10 +20,11 @@ namespace MiniShop.UI.Areas.Admin.Controllers
             _productManager = productManager;
             _categoryManager = categoryManager;
         }
+        [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> Index(bool id = false)
         {
-            var categories = await _categoryManager.GetNonDeletedCategories(id);
+            Response<List<CategoryViewModel>> categories = await _categoryManager.GetNonDeletedCategories(id);
             ViewBag.IsDeleted = id;
             return View(categories.Data);
         }
@@ -44,7 +46,7 @@ namespace MiniShop.UI.Areas.Admin.Controllers
             {
                 addCategoryViewModel.Url = Jobs.GetUrl( addCategoryViewModel.Name);
                 await _categoryManager.CreateAsync(addCategoryViewModel);
-                return RedirectToAction("Index");
+                return Redirect($"/Admin/Category/Index/false");
             }
          return View(addCategoryViewModel);
         }
@@ -68,7 +70,7 @@ namespace MiniShop.UI.Areas.Admin.Controllers
             {
                 editCategoryViewModel.Url = Jobs.GetUrl(editCategoryViewModel.Name);
                 await _categoryManager.UpdateAsync(editCategoryViewModel);
-                return View("Index");
+                return Redirect($"/Admin/Category/Index/false");
             }
             return View(editCategoryViewModel);
         }
@@ -99,7 +101,7 @@ namespace MiniShop.UI.Areas.Admin.Controllers
         {
             await _categoryManager.SoftDeleteAsync(id);
             var response = await _productManager.GetByIdAsync(id);
-            return Redirect($"/Admin/Product/Index/{!response.Data.IsDeleted}");
+            return Redirect($"/Admin/Category/Index/{!response.Data.IsDeleted}");
         }
     }
 }

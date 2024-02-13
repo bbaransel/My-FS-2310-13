@@ -66,19 +66,15 @@ namespace MiniShop.Business.Concrete
 
         public async Task<Response<NoContent>> SoftDeleteAsync(int id)
         {
-            var deletedCategory = await _repository.GetByIdAsync(c => c.Id == id);
-            if (deletedCategory == null)
+            var category = await _repository.GetByIdAsync(c => c.Id == id);
+            if (category == null)
             {
-                return Response<NoContent>.Fail("Böyle bir kategori bulunamadı");
+                return Response<NoContent>.Fail("İlgili kategori bulunamadı.");
             }
-            if (deletedCategory.IsDeleted)
-            {
-                return Response<NoContent>.Fail("Bu kategori zaten silinmiş!");
-            }
-            deletedCategory.IsDeleted = true;
-            deletedCategory.IsActive = false;
-            deletedCategory.ModifiedDate = DateTime.Now;
-            await _repository.UpdateAsync(deletedCategory);
+            category.IsDeleted = !category.IsDeleted;
+            category.IsActive = false;
+            category.ModifiedDate = DateTime.Now;
+            await _repository.UpdateAsync(category);
             return Response<NoContent>.Success();
         }
 
