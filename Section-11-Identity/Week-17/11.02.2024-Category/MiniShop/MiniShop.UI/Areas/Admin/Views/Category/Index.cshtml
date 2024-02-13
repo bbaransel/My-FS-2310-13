@@ -43,8 +43,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (Model != null && Model.Any())
-                                    {
+@*                                     @if (Model != null)
+                                    { *@
                                         @foreach (var c in Model)
                                         {
                                             <tr>
@@ -111,14 +111,14 @@
                                                 </td>
                                             </tr>
                                         }
-                                    }
+@*                                     }
                                     else
                                     {
                                         <tr>
                                             <td colspan="5">Silinmiş kategori bulunamadı.</td>
                                         </tr>
                                     }
-
+ *@
                                 </tbody>
                             </table>
                         </div>
