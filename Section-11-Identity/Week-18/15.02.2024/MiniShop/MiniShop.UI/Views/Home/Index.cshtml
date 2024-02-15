@@ -35,8 +35,10 @@
                                 <form asp-area="" asp-controller="ShoppingCart" asp-action="AddToCart">
                                         <input type="hidden" name="ProductId" value="@p.Id">
                                         <input type="hidden" name="quantity" value="1">
-                                <button type="submit">
+                                <button type="submit" style="background-color:transparent; border:none">
+                                    <a>
                                 <span class="icon_bag_alt"></span>
+                                    </a>
                                 </button>
                                 </form>
                             </li>

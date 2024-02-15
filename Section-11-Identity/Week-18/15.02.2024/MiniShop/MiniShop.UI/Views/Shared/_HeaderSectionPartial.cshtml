@@ -54,12 +54,7 @@
                                 <div class="tip">2</div>
                             </a>
                         </li>
-                        <li>
-                            <a asp-area="" asp-controller="ShoppingCart" asp-action="Index">
-                                <span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
-                            </a>
-                        </li>
+                        @await Component.InvokeAsync("ShoppingCartNotification",User.Identity.Name??null)
                     </ul>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MiniShop.Business.Abstract;
 using MiniShop.Entity.Concrete.Identity;
+using MiniShop.Shared.ViewModels;
 
 namespace MiniShop.UI.Controllers
 {
@@ -9,11 +10,13 @@ namespace MiniShop.UI.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly IShoppingCartService _shoppingCartManager;
+        private readonly IShoppingCartItemService _shoppingCartItemService;
 
-        public ShoppingCartController(UserManager<User> userManager, IShoppingCartService shoppingCartManager)
+        public ShoppingCartController(UserManager<User> userManager, IShoppingCartService shoppingCartManager, IShoppingCartItemService shoppingCartItemService)
         {
             _userManager = userManager;
             _shoppingCartManager = shoppingCartManager;
+            _shoppingCartItemService = shoppingCartItemService;
         }
 
         // Kullanıcının sepetini gösterecek
@@ -28,6 +31,15 @@ namespace MiniShop.UI.Controllers
             var userId =  _userManager.GetUserId(User);
             await _shoppingCartManager.AddToCartAsync(userId, productId, quantity);
             return Redirect("~/");
+        }
+        public async Task<IActionResult> ChangeQuantity(ShoppingCartItemViewModel shoppingCartItemViewModel)
+        {
+            if(ModelState.IsValid)
+            {
+                await _shoppingCartItemService.ChangeQuantityAsync(shoppingCartItemViewModel.Id, shoppingCartItemViewModel.Quantity);
+                return RedirectToAction("Index");
+            }
+            return View(shoppingCartItemViewModel);
         }
     }
 }

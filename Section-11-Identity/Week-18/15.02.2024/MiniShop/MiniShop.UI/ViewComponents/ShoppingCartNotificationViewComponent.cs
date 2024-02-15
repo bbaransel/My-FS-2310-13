@@ -1,13 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using MiniShop.Business.Abstract;
+using MiniShop.Entity.Concrete.Identity;
 
 namespace MiniShop.UI.ViewComponents
 {
     public class ShoppingCartNotificationViewComponent: ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
-        {
+        private readonly UserManager<User> _userManager;
+        private readonly IShoppingCartItemService _shoppingCartItemManager;
+        private readonly IShoppingCartService _shoppingCartManager;
 
-            return View();
+        public ShoppingCartNotificationViewComponent(UserManager<User> userManager, IShoppingCartItemService shoppingCartItemManager, IShoppingCartService shoppingCartManager)
+        {
+            _userManager = userManager;
+            _shoppingCartItemManager = shoppingCartItemManager;
+            _shoppingCartManager = shoppingCartManager;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync(string userName)
+        {
+            var user = userName!=null ? await _userManager.FindByNameAsync(userName) : null;
+            var shoppingCart = user != null ? await _shoppingCartManager.GetShoppingCartByUserIdAsync(user.Id) : null;
+            var count = shoppingCart != null ? await _shoppingCartItemManager.CountAsync(shoppingCart.Data.Id) : 0;
+            return View(count);
         }
     }
 }
