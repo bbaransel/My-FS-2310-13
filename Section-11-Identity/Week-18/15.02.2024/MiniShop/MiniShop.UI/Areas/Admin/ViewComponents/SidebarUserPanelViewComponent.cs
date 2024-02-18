@@ -17,10 +17,14 @@ namespace MiniShop.UI.Areas.Admin.ViewComponents
             _userManager = userManager;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(string? userName)
         {
-            //var user = await _userManager.GetUserAsync((System.Security.Claims.ClaimsPrincipal)User);
-            //var userName = $"{user.FirstName} {user.LastName}";
+            if (userName != null) 
+            {
+                var user = await _userManager.FindByNameAsync(userName);
+                ViewBag.UserFullName = $"{user.FirstName} {user.LastName}";
+                return View();
+            }
             return View();
         }
     }

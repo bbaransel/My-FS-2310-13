@@ -9,7 +9,7 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        @await Component.InvokeAsync("SidebarUserPanel")
+        @await Component.InvokeAsync("SidebarUserPanel", User.Identity.Name ?? null)
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
