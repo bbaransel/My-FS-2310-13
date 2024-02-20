@@ -11,5 +11,7 @@ namespace MiniShop.Business.Abstract
     {
         Task<Response<NoContent>> ChangeQuantityAsync(int shoppingCartItemId, int quantity);
         Task<int> CountAsync(int shoppingCartId);
+        Task<Response<NoContent>> DeleteFromCartAsync(int shoppingCartItemId);
+        Task<Response<NoContent>> ClearShoppingCartAsync(int shoppingCartId);
     }
 }

@@ -10,13 +10,13 @@ namespace MiniShop.UI.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly IShoppingCartService _shoppingCartManager;
-        private readonly IShoppingCartItemService _shoppingCartItemService;
+        private readonly IShoppingCartItemService _shoppingCartItemManager;
 
-        public ShoppingCartController(UserManager<User> userManager, IShoppingCartService shoppingCartManager, IShoppingCartItemService shoppingCartItemService)
+        public ShoppingCartController(UserManager<User> userManager, IShoppingCartService shoppingCartManager, IShoppingCartItemService shoppingCartItemManager)
         {
             _userManager = userManager;
             _shoppingCartManager = shoppingCartManager;
-            _shoppingCartItemService = shoppingCartItemService;
+            _shoppingCartItemManager = shoppingCartItemManager;
         }
 
         // Kullanıcının sepetini gösterecek
@@ -36,10 +36,20 @@ namespace MiniShop.UI.Controllers
         {
             if(ModelState.IsValid)
             {
-                await _shoppingCartItemService.ChangeQuantityAsync(shoppingCartItemViewModel.Id, shoppingCartItemViewModel.Quantity);
+                await _shoppingCartItemManager.ChangeQuantityAsync(shoppingCartItemViewModel.Id, shoppingCartItemViewModel.Quantity);
                 return RedirectToAction("Index");
             }
             return View(shoppingCartItemViewModel);
+        }
+        public async Task<IActionResult> DeleteItem(int id)
+        {
+            await _shoppingCartItemManager.DeleteFromCartAsync(id);
+            return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> ClearCart(int id)
+        {
+            await _shoppingCartItemManager.ClearShoppingCartAsync(id);
+            return RedirectToAction("Index");
         }
     }
 }

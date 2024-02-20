@@ -50,16 +50,6 @@ namespace MiniShop.Business.Concrete
             return Response<NoContent>.Fail("Bir hata oluştu");
         }
 
-        public Task<Response<NoContent>> ClearShoppingCartAsync(int shoppingCartId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Response<NoContent>> DeleteFromCartAsync(int shoppingCartId, int productId)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<Response<ShoppingCartViewModel>> GetShoppingCartByUserIdAsync(string userId)
         {
             var shoppingCart = await _shoppingCartRepository.GetShoppingCartByUserIdAsync(userId);
