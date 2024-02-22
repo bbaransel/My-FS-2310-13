@@ -1,0 +1,54 @@
+﻿@model RegisterViewModel
+<div class="container w-50 mt-5">
+    <h6 class="display-4">Kayıt Ol</h6>
+    <hr />
+    <form
+    asp-area=""
+    asp-controller="Account"
+    asp-action="Register"
+    method="post"
+    >
+        <div class="row g-2">
+            <div asp-validation-summary="All" class="col-md-12 text-danger"></div>
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label asp-for="FirstName"></label>
+                    <input asp-for="FirstName" class="form-control"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label asp-for="LastName"></label>
+                    <input asp-for="LastName" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label asp-for="UserName"></label>
+                    <input asp-for="UserName" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group mb-2">
+                    <label asp-for="RePassword"></label>
+                    <input asp-for="RePassword" class="form-control" />
+                </div>
+            </div>
+            <div class="col-md-12 mt-4 text-center">
+                <button class="btn btn-primary btn-lg w-100 " type="submit">Kayıt ol</button>
+            </div>
+        </div>
+    </form>
+</div>
