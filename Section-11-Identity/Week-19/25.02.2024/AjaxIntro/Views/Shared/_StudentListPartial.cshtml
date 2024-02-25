@@ -1,0 +1,30 @@
+﻿@model List<Student>
+<h1 class="text-warning display-6 text-center fw-bold">Öğrenci Listesi</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Numarası</th>
+            <th>Adı</th>
+            <th>Soyado</th>
+            <th>Aktif/Pasif</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.StudentNumber</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>
+                    <div class="form-check form-switch d-flex justify-content-center">
+                        <input onchange="changeIsActive('@student.Id')" class="form-check-input" type="checkbox" role="switch" asp-for="@student.IsActive" id="is-active-@student.Id">
+                        <label class="form-check-label" for="is-active-@student.Id"></label>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
