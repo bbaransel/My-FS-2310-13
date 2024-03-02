@@ -83,7 +83,7 @@ namespace MiniShop.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user =await _userManager.FindByNameAsync(loginViewModel.UserName);
+                var user = await _userManager.FindByNameAsync(loginViewModel.UserName);
                 if (user == null)
                 {
                     _notyfService.Error("Kullanıcı adı veya şifre hatalı");
@@ -96,8 +96,9 @@ namespace MiniShop.UI.Controllers
                     return View(loginViewModel);
                 }
                 var result = await _signInManager.PasswordSignInAsync(user, loginViewModel.Password, loginViewModel.RememberMe, true);
-                if (result.Succeeded)
+                if (result.Succeeded && !result.IsLockedOut)
                 {
+                    await _userManager.SetLockoutEnabledAsync(user, false);
                     var returnUrl = TempData["ReturnUrl"]?.ToString();
                     _notyfService.Information("Başarı ile giriş yapıldı. Hoş geldiniz!");
                     if (!String.IsNullOrEmpty(returnUrl))
@@ -117,7 +118,7 @@ namespace MiniShop.UI.Controllers
                 {
                     var attempCount = _signInManager.Options.Lockout.MaxFailedAccessAttempts;
                     var failedAttempCount = await _userManager.GetAccessFailedCountAsync(user);
-                    if(attempCount== failedAttempCount)
+                    if(attempCount== 0)
                     {
                         await _userManager.SetLockoutEnabledAsync(user, true);
                         _notyfService.Information("Hesabınız kilitlendi");
@@ -129,7 +130,7 @@ namespace MiniShop.UI.Controllers
                     }
                 }
             }
-                    return View(loginViewModel);
+            return View(loginViewModel);
 
         }
 
