@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MiniShop.Business.Abstract;
 using MiniShop.Business.Concrete;
 using MiniShop.Data.Abstract;
+using MiniShop.Data.Concrete;
 using MiniShop.Data.Concrete.Contexts;
 using MiniShop.Data.Concrete.Repositories;
 using MiniShop.Entity.Concrete.Identity;
@@ -11,6 +12,7 @@ using MiniShop.Shared.Helpers.Abstract;
 using MiniShop.Shared.Helpers.Concrete;
 using MiniShop.UI.EmailServices.Abstract;
 using MiniShop.UI.EmailServices.Concrete;
+using MiniShop.UI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,12 +65,15 @@ builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<IShoppingCartService, ShoppingCartManager>();
 builder.Services.AddScoped<IShoppingCartItemService, ShoppingCartItemManager>();
 builder.Services.AddScoped<IOrderService, OrderManager>();
+builder.Services.AddScoped<IMessageService, MessageManager>();
+
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 builder.Services.AddScoped<IShoppingCartItemRepository, ShoppingCartItemRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
 
 builder.Services.AddScoped<IImageHelper, ImageHelper>();
 
@@ -113,4 +118,4 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-app.Run();
+app.UpdateDatabase().Run();

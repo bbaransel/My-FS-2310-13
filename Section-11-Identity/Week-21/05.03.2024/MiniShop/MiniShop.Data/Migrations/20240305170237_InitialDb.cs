@@ -336,9 +336,9 @@ namespace MiniShop.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "7d5197f3-265d-4a56-bd60-92bf568e7ef7", null, "Süper Yönetici haklarını taşıyan rol", "SuperAdmin", "SUPERADMIN" },
-                    { "94ff40e8-1681-4f6b-9aef-1b7ce40dd07c", null, "Kullanıcı haklarını taşıyan rol", "Customer", "CUSTOMER" },
-                    { "c6a01b9d-339f-40af-92ad-157aeee64957", null, "Yönetici haklarını taşıyan rol", "Admin", "ADMIN" }
+                    { "3cd8c9b0-7d53-4ade-8a3e-1afc65383997", null, "Kullanıcı haklarını taşıyan rol", "Customer", "CUSTOMER" },
+                    { "b2753688-62a8-427a-bf08-4c43b2166070", null, "Yönetici haklarını taşıyan rol", "Admin", "ADMIN" },
+                    { "bda0b13d-de4a-4998-b263-6345071040e4", null, "Süper Yönetici haklarını taşıyan rol", "SuperAdmin", "SUPERADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -346,10 +346,10 @@ namespace MiniShop.Data.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "Address", "City", "ConcurrencyStamp", "DateOfBirth", "Email", "EmailConfirmed", "FirstName", "Gender", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "39eeb2de-9bc1-4fd8-ab9e-7f62f0382f5f", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "d3a20130-b9a6-43ad-b395-64482dfebde2", new DateTime(1993, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "selinmetea@gmail.com", true, "Selin", "Kadın", "Mete", false, null, "SELINMETE@GMAIL.COM", "SELINMETE", "AQAAAAIAAYagAAAAEKBiZ8VB9S8jtn+FXDwnzfLCpUpEZhverLKbadpSyxzcd7HznVw0fqthME/jXjjH1Q==", "5387996655", false, "cf728171-c73e-4ae7-8f19-d757c8fc1d4b", false, "selinMete" },
-                    { "6ae23710-4b88-462e-b662-94cd75908e07", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "a3ed3620-0238-4051-9112-9505f873027e", new DateTime(1993, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "aysenumay@gmail.com", true, "Ayşen Umay", "Kadın", "Ergül", false, null, "AYSENUMAY@GMAIL.COM", "AYSENUMAY", "AQAAAAIAAYagAAAAEBD2w+CVDNWuXVPNCDT0YOE4dbuq1AjI3YSpjyXHeoSoL+FDscztLtPBYEVNcHeS0g==", "5387996653", false, "315ed3a3-1acb-4976-a9fb-33ada6d0752f", false, "aysenumay" },
-                    { "801f37ee-5f61-4913-9cfe-7bdf85249105", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "f9a6373e-282c-42d2-a0f1-af69637b2b00", new DateTime(1990, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "denizfoca@gmail.com", true, "Deniz", "Erkek", "Foça", false, null, "DENIZFOCA@GMAIL.COM", "DENIZFOCA", "AQAAAAIAAYagAAAAEJpJI+meb2Bj0uk8sGgTTjmJDD3+RUvhKOlEcaug4paNrHvZJtl7ROFqi00IThTBPA==", "5558779966", false, "9d928d0d-c720-48b0-a8a2-3563ef9d5763", false, "denizFoca" },
-                    { "89df1de4-680b-4e7f-a619-c8963f95fc6a", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "6cc5bf03-3709-47b2-973a-5d2148752544", new DateTime(1993, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "kemaldurukan@gmail.com", true, "Kemal", "Erkek", "Durukan", false, null, "KEMALDURUKAN@GMAIL.COM", "KEMALDURUKAN", "AQAAAAIAAYagAAAAEND77eNSTdEZ0NWLbB5B+fZGrMToWgNTKcLGjg5PRRN60sDJbcx/QzyFLZasidDOIQ==", "5387996654", false, "61a55582-6b0a-4f8f-93c7-1a41fe88b929", false, "kemalDurukan" }
+                    { "1a6ae5c1-adcc-4d79-887b-bc468b24422b", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "49dec177-0620-4a4e-aea0-a3598358ebf1", new DateTime(1993, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "aysenumay@gmail.com", true, "Ayşen Umay", "Kadın", "Ergül", false, null, "AYSENUMAY@GMAIL.COM", "AYSENUMAY", "AQAAAAIAAYagAAAAEH8WzSfotsyI2OsfAAX5FQGjE5BVa/LWEaM902+u1joJvfY1B+WReSSj10dHf+QFlA==", "5387996653", false, "7f124301-64b9-4f76-9a05-51c10c0c6e8a", false, "aysenumay" },
+                    { "252c24b3-0280-4437-ad6e-3fda8b789d29", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "21137fa9-6fa0-4068-acea-5111389bc6fa", new DateTime(1990, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "denizfoca@gmail.com", true, "Deniz", "Erkek", "Foça", false, null, "DENIZFOCA@GMAIL.COM", "DENIZFOCA", "AQAAAAIAAYagAAAAEFuFh/tDzzR/bqvG/B9Y/NZD5MP91ZnDqPOSMwZO0MZd76xm3HHOPePMozh37ixQdw==", "5558779966", false, "6022e3e3-b730-487f-af00-250327d7bb96", false, "denizFoca" },
+                    { "2f290bd0-10fe-4210-b7e5-3c867869f7b5", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "05805a3a-3b21-41d8-b596-dfe79d06f06e", new DateTime(1993, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "selinmetea@gmail.com", true, "Selin", "Kadın", "Mete", false, null, "SELINMETE@GMAIL.COM", "SELINMETE", "AQAAAAIAAYagAAAAEAQOtNGcSlODtFeZqqp3e7VjtiI9UX7wqJMEVs27zBk/oHIYPpNedKPiB2cVmNswWA==", "5387996655", false, "52d7c358-8cda-4c6d-ab9d-6d319492d4e4", false, "selinMete" },
+                    { "e9fe69a0-4da2-4d38-9440-449f9bdb7c10", 0, "Halilpaşa Konağı Caddesi Kemeraltı Sokak No:4 D:2 Üsküdar", "İstanbul", "e0f2f510-37ea-4813-851b-ba0867b6e8db", new DateTime(1993, 7, 16, 0, 0, 0, 0, DateTimeKind.Unspecified), "kemaldurukan@gmail.com", true, "Kemal", "Erkek", "Durukan", false, null, "KEMALDURUKAN@GMAIL.COM", "KEMALDURUKAN", "AQAAAAIAAYagAAAAEKmp6xx2CWaA7ywu3Ke4Qorcmf8kDO2hzVzreOHvfQubweSspa5uxNwjl0G1YKAjCQ==", "5387996654", false, "adcd6e0f-6e46-4d70-aba4-71e4075e71e0", false, "kemalDurukan" }
                 });
 
             migrationBuilder.InsertData(
@@ -357,11 +357,11 @@ namespace MiniShop.Data.Migrations
                 columns: new[] { "Id", "CreatedDate", "Description", "IsActive", "IsDeleted", "ModifiedDate", "Name", "Url" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6824), "TV kategorisi", true, false, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6836), "Televizyon", "televizyon" },
-                    { 2, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6841), "Bilgisayar kategorisi", true, false, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6841), "Bilgisayar", "bilgisayar" },
-                    { 3, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6843), "Elektronik Eşya kategorisi", true, false, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6843), "Elektronik Eşya", "elektronik-esya" },
-                    { 4, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6844), "Beyaz Eşya kategorisi", true, false, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6845), "Beyaz Eşya", "beyaz-esya" },
-                    { 5, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6846), "Telefon kategorisi", true, false, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(6846), "Telefon", "telefon" }
+                    { 1, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4792), "TV kategorisi", true, false, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4798), "Televizyon", "televizyon" },
+                    { 2, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4802), "Bilgisayar kategorisi", true, false, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4803), "Bilgisayar", "bilgisayar" },
+                    { 3, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4804), "Elektronik Eşya kategorisi", true, false, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4804), "Elektronik Eşya", "elektronik-esya" },
+                    { 4, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4805), "Beyaz Eşya kategorisi", true, false, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4806), "Beyaz Eşya", "beyaz-esya" },
+                    { 5, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4806), "Telefon kategorisi", true, false, new DateTime(2024, 3, 5, 20, 2, 37, 724, DateTimeKind.Local).AddTicks(4807), "Telefon", "telefon" }
                 });
 
             migrationBuilder.InsertData(
@@ -369,17 +369,17 @@ namespace MiniShop.Data.Migrations
                 columns: new[] { "Id", "CreatedDate", "ImageUrl", "IsActive", "IsDeleted", "IsHome", "ModifiedDate", "Name", "Price", "Properties", "Url" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3139), "1.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3145), "IPhone 14", 59000m, "Harika bir telefon", "iphone-14" },
-                    { 2, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3151), "2.png", true, false, false, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3151), "IPhone 14 Pro", 69000m, "Bu da harika bir telefon", "iphone-14-pro" },
-                    { 3, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3153), "3.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3153), "Samsung S23", 49000m, "İdare eder", "samsung-s23" },
-                    { 4, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3155), "4.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3155), "Xaomi Note 4", 39000m, "Harika bir telefon", "xaomi-note-4" },
-                    { 5, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3156), "5.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3157), "MacBook Air M2", 52000m, "M2nin gücü", "macbook-air-m2" },
-                    { 6, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3158), "6.png", true, false, false, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3158), "MacBook Pro M3", 79000m, "16 Gb ram", "macbook-pro-m3" },
-                    { 7, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3159), "7.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3160), "Vestel Çamaşır Makinesi X65", 19000m, "Akıllı makine", "vestel-camasir-makinesi-x65" },
-                    { 8, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3161), "8.png", true, false, false, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3168), "Arçelik Çamaşır Makinesi A-4", 21000m, "Süper hızlı makine", "arcelik-camasir-makinesi-a-4" },
-                    { 9, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3181), "9.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3182), "Hoop Dijital Radyo X96", 1250m, "Klasik radyo keyfi", "hoop-dijital-radyo-x96" },
-                    { 10, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3183), "10.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3183), "Xaomi Dijital Baskül", 2100m, "Kilonuzu kontrol edin", "xaomi-dijital-baskul" },
-                    { 11, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3185), "11.png", true, false, true, new DateTime(2024, 3, 3, 11, 43, 29, 680, DateTimeKind.Local).AddTicks(3185), "Blaupunkt AC69 Led TV", 9800m, "Android tv", "blaupunkt-ac69-led-tv" }
+                    { 1, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2903), "1.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2910), "IPhone 14", 59000m, "Harika bir telefon", "iphone-14" },
+                    { 2, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2916), "2.png", true, false, false, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2917), "IPhone 14 Pro", 69000m, "Bu da harika bir telefon", "iphone-14-pro" },
+                    { 3, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2918), "3.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2919), "Samsung S23", 49000m, "İdare eder", "samsung-s23" },
+                    { 4, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2920), "4.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2920), "Xaomi Note 4", 39000m, "Harika bir telefon", "xaomi-note-4" },
+                    { 5, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2922), "5.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2922), "MacBook Air M2", 52000m, "M2nin gücü", "macbook-air-m2" },
+                    { 6, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2923), "6.png", true, false, false, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2924), "MacBook Pro M3", 79000m, "16 Gb ram", "macbook-pro-m3" },
+                    { 7, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2925), "7.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2925), "Vestel Çamaşır Makinesi X65", 19000m, "Akıllı makine", "vestel-camasir-makinesi-x65" },
+                    { 8, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2927), "8.png", true, false, false, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2934), "Arçelik Çamaşır Makinesi A-4", 21000m, "Süper hızlı makine", "arcelik-camasir-makinesi-a-4" },
+                    { 9, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2952), "9.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2953), "Hoop Dijital Radyo X96", 1250m, "Klasik radyo keyfi", "hoop-dijital-radyo-x96" },
+                    { 10, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2954), "10.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2954), "Xaomi Dijital Baskül", 2100m, "Kilonuzu kontrol edin", "xaomi-dijital-baskul" },
+                    { 11, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2958), "11.png", true, false, true, new DateTime(2024, 3, 5, 20, 2, 37, 725, DateTimeKind.Local).AddTicks(2959), "Blaupunkt AC69 Led TV", 9800m, "Android tv", "blaupunkt-ac69-led-tv" }
                 });
 
             migrationBuilder.InsertData(
@@ -387,10 +387,10 @@ namespace MiniShop.Data.Migrations
                 columns: new[] { "Id", "CreatedDate", "UserId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(2126), "801f37ee-5f61-4913-9cfe-7bdf85249105" },
-                    { 2, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(2146), "39eeb2de-9bc1-4fd8-ab9e-7f62f0382f5f" },
-                    { 3, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(2147), "89df1de4-680b-4e7f-a619-c8963f95fc6a" },
-                    { 4, new DateTime(2024, 3, 3, 11, 43, 29, 679, DateTimeKind.Local).AddTicks(2149), "6ae23710-4b88-462e-b662-94cd75908e07" }
+                    { 1, new DateTime(2024, 3, 5, 20, 2, 37, 723, DateTimeKind.Local).AddTicks(8801), "252c24b3-0280-4437-ad6e-3fda8b789d29" },
+                    { 2, new DateTime(2024, 3, 5, 20, 2, 37, 723, DateTimeKind.Local).AddTicks(8821), "2f290bd0-10fe-4210-b7e5-3c867869f7b5" },
+                    { 3, new DateTime(2024, 3, 5, 20, 2, 37, 723, DateTimeKind.Local).AddTicks(8822), "e9fe69a0-4da2-4d38-9440-449f9bdb7c10" },
+                    { 4, new DateTime(2024, 3, 5, 20, 2, 37, 723, DateTimeKind.Local).AddTicks(8823), "1a6ae5c1-adcc-4d79-887b-bc468b24422b" }
                 });
 
             migrationBuilder.InsertData(
@@ -398,10 +398,10 @@ namespace MiniShop.Data.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "c6a01b9d-339f-40af-92ad-157aeee64957", "39eeb2de-9bc1-4fd8-ab9e-7f62f0382f5f" },
-                    { "94ff40e8-1681-4f6b-9aef-1b7ce40dd07c", "6ae23710-4b88-462e-b662-94cd75908e07" },
-                    { "7d5197f3-265d-4a56-bd60-92bf568e7ef7", "801f37ee-5f61-4913-9cfe-7bdf85249105" },
-                    { "c6a01b9d-339f-40af-92ad-157aeee64957", "89df1de4-680b-4e7f-a619-c8963f95fc6a" }
+                    { "3cd8c9b0-7d53-4ade-8a3e-1afc65383997", "1a6ae5c1-adcc-4d79-887b-bc468b24422b" },
+                    { "bda0b13d-de4a-4998-b263-6345071040e4", "252c24b3-0280-4437-ad6e-3fda8b789d29" },
+                    { "b2753688-62a8-427a-bf08-4c43b2166070", "2f290bd0-10fe-4210-b7e5-3c867869f7b5" },
+                    { "b2753688-62a8-427a-bf08-4c43b2166070", "e9fe69a0-4da2-4d38-9440-449f9bdb7c10" }
                 });
 
             migrationBuilder.InsertData(
