@@ -1,0 +1,13 @@
+﻿@model int
+<li>
+    <a asp-area="" asp-controller="ShoppingCart" asp-action="Index">
+        @{
+            bool isShowCount = Model == 0 ? false : true;
+        }
+        <span class="@(isShowCount?"icon_cart":"icon_cart_alt")"></span>
+        @if (isShowCount)
+        {
+            <div class="tip">@Model</div>
+        }
+    </a>
+</li>
