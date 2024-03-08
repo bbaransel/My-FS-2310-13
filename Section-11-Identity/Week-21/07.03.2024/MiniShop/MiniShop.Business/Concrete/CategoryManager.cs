@@ -161,5 +161,15 @@ namespace MiniShop.Business.Concrete
             return Response<NoContent>.Success();
         }
 
+        public async Task<Response<CategoryViewModel>> GetByUrlAsync(string url)
+        {
+            var category = await _repository.GetByIdAsync(c => c.Url == url);
+            if (category == null)
+            {
+                return Response<CategoryViewModel>.Fail("Böyle bir kategori bulunamadı");
+            }
+            var categoryViewModel = _mapper.Map<CategoryViewModel>(category);
+            return Response<CategoryViewModel>.Success(categoryViewModel);
+        }
     }
 }

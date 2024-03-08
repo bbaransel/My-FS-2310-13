@@ -11,7 +11,7 @@
                         <p>
                             @Model[0].Description
                         </p>
-                        <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="@Model[0].Id">Şimdi Al</a>
+                        <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="@Model[0].Url">Şimdi Al</a>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                                 <div class="categories__text">
                                     <h4>@Model[i].Name</h4>
                                     <p>@Model[i].Description</p>
-                                    <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="@Model[i].Id">Şimdi al</a>
+                                    <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="@Model[i].Url">Şimdi al</a>
                                 </div>
                             </div>
                         </div>
